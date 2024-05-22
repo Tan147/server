@@ -1,0 +1,137 @@
+Subject: [PATCH] module-info.java, modules/Message.java, module-info.java
+---
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+--- /dev/null	(revision d832268bc803ac2314e5e517f19320c4fca560a3)
++++ b/.gitignore	(revision d832268bc803ac2314e5e517f19320c4fca560a3)
+@@ -0,0 +1,34 @@
++### IntelliJ IDEA ###
++out/
++!**/src/main/**/out/
++!**/src/test/**/out/
++
++### Eclipse ###
++.apt_generated
++.classpath
++.factorypath
++.project
++.settings
++.springBeans
++.sts4-cache
++bin/
++!**/src/main/**/bin/
++!**/src/test/**/bin/
++
++### NetBeans ###
++/nbproject/private/
++/nbbuild/
++/dist/
++/nbdist/
++/.nb-gradle/
++
++### VS Code ###
++.vscode/
++
++### Mac OS ###
++.DS_Store
++
++### Idea ###
++.idea
++*.iml
++out
+\ No newline at end of file
+Index: client/src/module-info.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/client/src/module-info.java b/client/src/module-info.java
+new file mode 100644
+--- /dev/null	(revision d832268bc803ac2314e5e517f19320c4fca560a3)
++++ b/client/src/module-info.java	(revision d832268bc803ac2314e5e517f19320c4fca560a3)
+@@ -0,0 +1,3 @@
++module client {
++    requires common;
++}
+Index: common/src/com/tatiana/modules/Message.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/common/src/com/tatiana/modules/Message.java b/common/src/com/tatiana/modules/Message.java
+new file mode 100644
+--- /dev/null	(revision d832268bc803ac2314e5e517f19320c4fca560a3)
++++ b/common/src/com/tatiana/modules/Message.java	(revision d832268bc803ac2314e5e517f19320c4fca560a3)
+@@ -0,0 +1,38 @@
++package com.tatiana.modules;
++
++import java.time.LocalDateTime;
++import java.util.Date;
++
++public class Message {
++    private String sender;
++    private String text;
++    private LocalDateTime sentAt;
++
++    public Message(String sender) {
++        this.sender = sender;
++    }
++
++    public String getSender() {
++        return sender;
++    }
++
++    public void setSender(String sender) {
++        this.sender = sender;
++    }
++
++    public String getText() {
++        return text;
++    }
++
++    public void setText(String text) {
++        this.text = text;
++    }
++
++    public LocalDateTime getSentAt() {
++        return sentAt;
++    }
++
++    public void setSentAt(LocalDateTime sentAt) {
++        this.sentAt = sentAt;
++    }
++}
+Index: common/src/module-info.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/common/src/module-info.java b/common/src/module-info.java
+new file mode 100644
+--- /dev/null	(revision d832268bc803ac2314e5e517f19320c4fca560a3)
++++ b/common/src/module-info.java	(revision d832268bc803ac2314e5e517f19320c4fca560a3)
+@@ -0,0 +1,4 @@
++module common {
++    exports com.tatiana.modules;
++
++}
+\ No newline at end of file
+Index: server/src/module-info.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/server/src/module-info.java b/server/src/module-info.java
+new file mode 100644
+--- /dev/null	(revision d832268bc803ac2314e5e517f19320c4fca560a3)
++++ b/server/src/module-info.java	(revision d832268bc803ac2314e5e517f19320c4fca560a3)
+@@ -0,0 +1,3 @@
++module server {
++    requires common;
++}
+\ No newline at end of file
