@@ -9,6 +9,7 @@ public class Message implements Serializable {
     private String text;
     private LocalDateTime sentAt;
 
+
     public Message(String sender) {
         this.sender = sender;
     }
@@ -36,4 +37,6 @@ public class Message implements Serializable {
     public void setSentAt(LocalDateTime sentAt) {
         this.sentAt = sentAt;
     }
+
+
 }
